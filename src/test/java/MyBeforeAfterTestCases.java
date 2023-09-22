@@ -1,12 +1,15 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 
 //junit does not guarantee the order of execution of test cases
 
 
 public class MyBeforeAfterTestCases {
+
+    @BeforeAll
+    static void beforeAll(){
+        System.out.println("beforeAll");
+    }
 
     @BeforeEach
     void beforeEach() throws Exception {
@@ -33,6 +36,11 @@ public class MyBeforeAfterTestCases {
     @AfterEach
     void afterEach(){
         System.out.println("AfterEach");
+    }
+
+    @AfterAll
+    static void afterAll(){
+        System.out.println("AfterAll");
     }
 
 
